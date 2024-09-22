@@ -1,0 +1,9 @@
+
+
+npx --no-install commitlint --edit "$1"
+
+if [ $? -eq 0 ]; then
+  echo "✅ Commit message is valid! You're all set to go! 🚀"
+else
+  echo "❌ Oops! Your commit message does not follow the rules! Please fix it! 🔧"
+fi
