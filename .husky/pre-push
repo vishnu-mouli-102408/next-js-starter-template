@@ -1,0 +1,6 @@
+
+echo "Running pre-push hook... 🍺"
+
+yarn lint
+
+echo "Final Lint check completed successfully. ✅"
