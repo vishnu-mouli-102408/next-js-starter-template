@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
+import { MoonIcon, SunIcon } from "@/assets/svgs";
+import { ThemeProvider } from "@/components/themes/theme-provider";
+import ThemeSwitcher from "@/components/themes/theme-switcher";
+
 import "./globals.css";
 
 const geistSans = localFont({
@@ -36,7 +40,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ThemeSwitcher rightIcon={<MoonIcon />} leftIcon={<SunIcon />} />
+          <main>{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );

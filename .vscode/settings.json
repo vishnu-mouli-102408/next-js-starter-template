@@ -17,7 +17,7 @@
     "source.fixAll.eslint": "always",
     "source.addMissingImports.ts": "always",
     "source.fixAll.ts": "always",
-    "source.removeUnused.ts": "always",
+    // "source.removeUnused.ts": "always",
     "source.removeUnusedImports": "always"
   },
   "files.associations": {
