@@ -1,21 +1,31 @@
 import type { Metadata } from "next";
+import { Roboto } from "next/font/google";
 import localFont from "next/font/local";
 
 import { MoonIcon, SunIcon } from "@/assets/svgs";
 import { ThemeProvider } from "@/components/themes/theme-provider";
 import ThemeSwitcher from "@/components/themes/theme-switcher";
+import { cn } from "@/lib/utils";
 
 import "./globals.css";
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+  src: "../assets/fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
+  src: "../assets/fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
+});
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  variable: "--font-roboto",
+  weight: ["300", "400", "500", "700"],
+  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -37,9 +47,7 @@ export default function RootLayout({
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>"
         />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={cn(roboto.className, "antialiased")}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

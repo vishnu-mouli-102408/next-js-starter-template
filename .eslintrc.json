@@ -9,6 +9,7 @@
   "plugins": ["prettier", "check-file"],
   "rules": {
     "prettier/prettier": "error",
+    "@typescript-eslint/no-unsafe-function-type": "off",
     "@typescript-eslint/no-explicit-any": [
       "error",
       {

@@ -1,6 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body {
+  font-family:
+    var(--font-roboto),
+    sans-serif,
+    -apple-system,
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans";
+
+  font-display: "swap";
+  margin: 0;
+  padding: 0;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
