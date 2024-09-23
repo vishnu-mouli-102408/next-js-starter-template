@@ -1,15 +1,16 @@
 /** @type {import('next').NextConfig} */
+import type { NextConfig } from "next";
 
-const nextConfig = {
+const nextConfig: NextConfig = {
   experimental: {
     typedRoutes: true,
   },
   webpack(config) {
     // Grab the existing rule that handles SVG imports
-    const fileLoaderRule = config.module.rules.find((rule) =>
-      rule.test?.test?.(".svg")
+    const fileLoaderRule = config.module.rules.find(
+      (rule: { test: { test: (arg0: string) => unknown } }) =>
+        rule.test?.test?.(".svg")
     );
-
     config.module.rules.push(
       // Reapply the existing rule, but only for svg imports ending in ?url
       {
@@ -20,7 +21,7 @@ const nextConfig = {
       // Convert all other *.svg imports to React components
       {
         test: /\.svg$/i,
-        issuer: fileLoaderRule.issuer,
+        issuer: fileLoaderRule.issuer || /\.(js|ts)x?$/,
         resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] }, // exclude if *.svg?url
         use: ["@svgr/webpack"],
       }

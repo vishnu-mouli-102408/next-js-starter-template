@@ -9,6 +9,12 @@
   "plugins": ["prettier", "check-file"],
   "rules": {
     "prettier/prettier": "error",
+    "@typescript-eslint/no-explicit-any": [
+      "error",
+      {
+        "fixToUnknown": true
+      }
+    ],
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": [
       "error",
