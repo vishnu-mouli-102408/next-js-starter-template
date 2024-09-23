@@ -16,7 +16,8 @@ interface ThemeSwitcherProps {
 
 const ThemeSwitcher = ({ leftIcon, rightIcon }: ThemeSwitcherProps) => {
   const { setTheme } = useTheme();
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(true);
+
   return (
     <div className="container">
       <div className="flex flex-row items-center gap-2">
@@ -26,13 +27,9 @@ const ThemeSwitcher = ({ leftIcon, rightIcon }: ThemeSwitcherProps) => {
           </div>
         )}
         <Switch
+          defaultChecked={true}
           onCheckedChange={(e) => {
-            // console.log("EEE", e);
-            if (e) {
-              setTheme("dark");
-            } else {
-              setTheme("light");
-            }
+            setTheme(e ? "dark" : "light");
             setChecked(e);
           }}
         />
