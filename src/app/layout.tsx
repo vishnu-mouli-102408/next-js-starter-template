@@ -2,20 +2,20 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import localFont from "next/font/local";
 
-import { MoonIcon, SunIcon } from "@/assets/svgs";
 import { ThemeProvider } from "@/components/themes/theme-provider";
 import ThemeSwitcher from "@/components/themes/theme-switcher";
 import { cn } from "@/lib/utils";
 
+import { MoonIcon, SunIcon } from "../../public/svgs";
 import "./globals.css";
 
 const geistSans = localFont({
-  src: "../assets/fonts/GeistVF.woff",
+  src: "../../public/fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
 const geistMono = localFont({
-  src: "../assets/fonts/GeistMonoVF.woff",
+  src: "../../public/fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
 });
