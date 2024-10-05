@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import localFont from "next/font/local";
 
-import { ThemeProvider } from "@/components/themes/theme-provider";
-import ThemeSwitcher from "@/components/themes/theme-switcher";
+import { ThemeProvider, ThemeSwitcher } from "@/components";
 import { cn } from "@/lib/utils";
 
 import { MoonIcon, SunIcon } from "../../public/svgs";
