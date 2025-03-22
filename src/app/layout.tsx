@@ -31,6 +31,7 @@ export const metadata: Metadata = {
   title: "Next JS Starter Kit",
   description:
     "Next JS Starter Kit with TypeScript, ESLint, Prettier, Tailwind CSS, and Github Workflows.",
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
 export default function RootLayout({
